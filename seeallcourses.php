@@ -14,7 +14,7 @@ $courses = searchCourse($code);
     <?php
     echo "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Major</th></tr>";
     foreach ($courses as $row) {
-        echo "<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . $row["course_syllabus"] . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["major_id"] . "</td></tr>";
+        echo "<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . base64_encode($row["course_syllabus"]) . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["major_id"] . "</td></tr>";
     }
     ?>
 </table>
