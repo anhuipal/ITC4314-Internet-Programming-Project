@@ -7,6 +7,25 @@ function getUsers(){
     return $resultsArray;
 }
 
+function isAdmin($user_id){
+    try{
+        include 'db.php';
+        $results = $db->query("select user_type from users WHERE user_id=$user_id");
+        $row = $results->fetchColumn();
+        if($row==1){
+            return 'admin';
+        }
+        else if($row==2){
+            return 'professor';
+        }
+        else{
+            return 'user';
+        }
+    }catch(PDOException $e){
+        echo $e;
+    }
+}
+
 function getFname($user_id){
     try {
         include "db.php";
