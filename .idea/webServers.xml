@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6f3538cc-3393-416f-a86e-31ba560a354d" name="Deree" url="http://students.acg.edu">
+        <fileTransfer host="students.acg.edu" port="21" rootFolder="/public_html/ProjectTest" username="panaretos">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
