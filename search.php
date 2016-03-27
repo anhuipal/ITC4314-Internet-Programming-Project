@@ -45,7 +45,7 @@ include "header.php";
         </div>
         <button type="submit" class="btn btn-primary btn-block" name="submit" value="submit" id="btn-submit">Search</button>
         <div class="jumbotron">
-            <p><a href="seeallcourses.php">See all courses</a></p>
+            <p><a href="seeAllCourses.php">See all courses</a></p>
         </div>
     </form>
 </div>

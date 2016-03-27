@@ -7,7 +7,7 @@ function getUsers(){
     return $resultsArray;
 }
 
-function isAdmin($user_id){
+function userType($user_id){
     try{
         include 'db.php';
         $results = $db->query("select user_type from users WHERE user_id=$user_id");
