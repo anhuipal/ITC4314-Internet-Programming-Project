@@ -1,6 +1,7 @@
 <?php
 
 include_once "db.php";
+include_once "dbFunctions.php";
 
 $search = strip_tags($_POST['search']);
 $searchBy = $_POST['searchBy'];
@@ -20,7 +21,7 @@ try{
             $result.="<table id='result-table' class='table table-striped' align='center'>";
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
-                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . $row["course_syllabus"] . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["major_id"] . "</td></tr>";
+                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
             }
             $result.='</table>';
             echo $result;
@@ -40,7 +41,7 @@ try{
             $result.="<table id='result-table' class='table table-striped' align='center'>";
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
-                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . $row["course_syllabus"] . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["major_id"] . "</td></tr>";
+                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
             }
             $result.='</table>';
             echo $result;
@@ -60,7 +61,7 @@ try{
             $result.="<table id='result-table' class='table table-striped' align='center'>";
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
-                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . $row["course_syllabus"] . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["major_id"] . "</td></tr>";
+                $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
             }
             $result.='</table>';
             echo $result;

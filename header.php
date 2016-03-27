@@ -52,13 +52,15 @@
     ?>
 
     <?php
-    $type = isAdmin($_SESSION['user_id']);
-    if($type=='admin') {
-        echo "<script type='text/javascript'>$(document).ready(function(){
+    if(isset($_SESSION['user_id'])) {
+        $type = isAdmin($_SESSION['user_id']);
+        if ($type == 'admin') {
+            echo "<script type='text/javascript'>$(document).ready(function(){
 
             $('#adminPanel').show();
 
 });</script>";
+        }
     }
     ?>
 

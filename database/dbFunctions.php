@@ -38,6 +38,18 @@ function getFname($user_id){
     }
 }
 
+function getMajorName($major_id){
+    try {
+        include "db.php";
+        $results = $db->query("select major_desc from majors WHERE major_id=$major_id");
+        $row = $results->fetchColumn();
+        return $row;
+    }
+    catch(PDOException $e){
+        echo $e;
+    }
+}
+
 function fillMajors(){
     try {
         include "db.php";
