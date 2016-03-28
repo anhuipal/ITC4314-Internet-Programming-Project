@@ -28,10 +28,7 @@
                     url: './database/logout.php',
                     /*data: data,*/
                     success: function(data){
-                        /*if(data==1){*/
-                            /*window.location.href = 'index.php';
-                            location.reload();*/
-                        /*}*/
+                        window.location.href = 'index.php';
                     }
                 });
             });
@@ -90,9 +87,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li id="login-msg"><p id="welcome-msg" class="text-left" align="center" style="color: #fff;padding: 12px; font-size: 1.2em" hidden>Welcome <?php if(isset($_SESSION['user_id'])){echo getFname($_SESSION['user_id']);}?>!</p></li>
-                <li id="signin"><p class="text-left" id="signIn"><a href="#" class="btn btn-primary btn-lg navbtn" role="button" data-toggle="modal" data-target="#login-modal" >Sign In</a></p></li>
+                <li id="signin"><p class="text-left" id="signIn"><a href="#" class="btn btn-primary btn-lg navbtn" role="button" data-toggle="modal" data-target="#login-modal">Sign In</a></p></li>
                 <li><p class="text-left" id="adminPanel" hidden><a href="adminPanel.php" class="btn btn-primary btn-lg navbtn" role="button">Admin Panel</a></p></li>
-                <li id="logout" ><p class="text-left" id="logOut" hidden><button name="btn-logout" class="btn btn-primary btn-lg navbtn" onclick="location.reload();" id="destroy">Sign out</button></p></li>
+                <li id="logout" ><p class="text-left" id="logOut" hidden><button name="btn-logout" class="btn btn-primary btn-lg navbtn" onclick="location.reload(true);" id="destroy">Sign out</button></p></li>
                 <li id="signup"><p class="text-left" id="signUp"><a href="signup.php" class="btn btn-primary btn-lg" role="button">Sign Up</a></p></li>
             </ul>
         </div><!-- /.navbar-collapse -->
