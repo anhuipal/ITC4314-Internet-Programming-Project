@@ -2,7 +2,6 @@
 $pagetitle="Academic Planner";
 include "header.php";
 include_once "database/db.php";
-$_SESSION['user_id'] = $_SESSION['id'];
 ?>
 
 

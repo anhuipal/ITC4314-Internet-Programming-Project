@@ -1,4 +1,7 @@
-<?php session_start(); include_once 'database/dbFunctions.php'?>
+<?php session_start();
+include_once 'database/dbFunctions.php';
+$_SESSION['user_id']=$_SESSION['id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +47,17 @@
             $('#welcome-msg').show();
             $('#signUp').hide();
 
+});</script>";
+    }
+    ?>
+
+    <?php
+    if(!isset($_SESSION['user_id']) && basename($_SERVER['PHP_SELF'])=='rate.php') {
+        echo "<script type='text/javascript'>$(document).ready(function(){
+
+            $('#error').show();
+            $(\"#error\").html('<div class=\"alert alert-danger\"> <span class=\"glyphicon glyphicon-info-sign\"></span> &nbsp; Please login in order to review courses !</div>');
+            $('#review-submit').prop('disabled',true);
 });</script>";
     }
     ?>

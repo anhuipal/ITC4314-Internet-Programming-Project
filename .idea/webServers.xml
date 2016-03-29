@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="41a7009b-32f7-4aec-8c32-f8a3d117c6bb" name="Final" url="http://students.acg.edu">
+        <fileTransfer host="students.acg.edu" port="21" rootFolder="/public_html" password="dfc0dfcbdfc9dfc1df9bdf9ddf9edf8bdf89" username="panaretos">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

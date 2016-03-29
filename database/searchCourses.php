@@ -1,5 +1,6 @@
 <?php
-
+unset($_SESSION['course_code']);
+session_start();
 include_once "db.php";
 include_once "dbFunctions.php";
 
@@ -22,11 +23,10 @@ try{
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Course Level</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
                 $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["course_level"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
+                $_SESSION['course_code'] = $row['course_code'];
             }
             $result.='</table>';
             echo $result;
-            //echo json_encode($resultsArray);
-            //return $resultsArray;
         } else {
             echo "1";
         }
@@ -42,6 +42,7 @@ try{
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Course Level</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
                 $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["course_level"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
+                $_SESSION['course_code'] = $row['course_code'];
             }
             $result.='</table>';
             echo $result;
@@ -62,6 +63,7 @@ try{
             $result.= "<tr><th>Course Code</th><th>Course Descpriction</th><th>Course Title</th><th>Course Syllabus</th><th>Course Credits</th><th>Course Level</th><th>Major</th></tr>";
             foreach ($resultsArray as $row) {
                 $result.="<tr><td>". strtoupper($row["course_code"]) . "</td><td>" . $row["course_desc"] . "</td><td>" . $row["course_title"] . "</td> <td>" . "<a href='pdfs/".strtoupper($row["course_code"]) .".pdf' target='_blank'>Download</a>" . "</td><td>" . $row["course_credits"] . "</td><td>" . $row["course_level"] . "</td><td>" . getMajorName($row["major_id"]) . "</td></tr>";
+                $_SESSION['course_code'] = $row['course_code'];
             }
             $result.='</table>';
             echo $result;

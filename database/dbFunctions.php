@@ -61,6 +61,44 @@ function fillMajors(){
     }
 }
 
+function getReviews($course_code){
+    try {
+        include "db.php";
+        $result = '';
+        $collaspeId = 0;
+        $stm = $db->prepare("select * from reviews WHERE course_code=?");
+        $stm->bindValue(1, $course_code);
+        $stm->execute();
+        $count = $stm->rowCount();
+        if($count !=0) {
+            $resultsArray = $stm->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($resultsArray as $row) {
+                $result .= "<div class='panel panel-default'>
+        <div class='panel-heading' role='tab' id=" . $row['review_id'] . ">
+            <h4 class='panel-title'>
+                <a role='button' data-toggle='collapse' data-parent='#accordion' href=" . '#' . ++$collaspeId . " aria-expanded=\"true\" aria-controls=" . $collaspeId . ">
+                        Review $collaspeId
+                </a>
+            </h4>
+        </div>
+        <div id=" . $collaspeId . " class='panel-collapse collapse in' role='tabpanel' aria-labelledby=" . $row['review_id'] . ">
+            <div class='panel-body'>
+                " . $row['review_com'] . "
+            </div>
+        </div>
+    </div>";
+            }
+            return $result;
+        }
+        else{
+            return $result.="<div class='alert alert-danger'> <span class='glyphicon glyphicon-info-sign'></span> &nbsp; Sorry no reviews are available for this course</div>";
+        }
+    }
+    catch(PDOException $e){
+        echo $e;
+    }
+}
+
 
 function registerUser($id, $fName, $lName, $birth_year, $password,$email)
 {
