@@ -1,6 +1,6 @@
 <?php
+$pagetitle="See all courses";
 include "header.php";
-/*include 'database/dbFunctions.php';*/
 $code= $_POST["search"];
 $courses = searchCourse($code);
 

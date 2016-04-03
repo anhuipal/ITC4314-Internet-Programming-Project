@@ -1,6 +1,7 @@
 <?php session_start();
 include_once 'database/dbFunctions.php';
 $_SESSION['user_id']=$_SESSION['id'];
+
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +9,8 @@ $_SESSION['user_id']=$_SESSION['id'];
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" CONTENT="Creator: Dionysios Anastasios Panaretos, Project for: The American College of Greece, Content: Search,Rate/Review,Plan, The Simplest Way of Knowing">
+    <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="img/icon-logo" rel="shortcut icon" />
     <title><?php echo $pagetitle;?></title>
@@ -72,6 +75,14 @@ $_SESSION['user_id']=$_SESSION['id'];
 
 });</script>";
         }
+        elseif($type =='professor'){
+            echo "<script type='text/javascript'>$(document).ready(function(){
+
+            $('#profPanel').show();
+
+});</script>";
+        }
+
     }
     ?>
 
@@ -103,6 +114,7 @@ $_SESSION['user_id']=$_SESSION['id'];
                 <li id="login-msg"><p id="welcome-msg" class="text-left" align="center" style="color: #fff;padding: 12px; font-size: 1.2em" hidden>Welcome <?php if(isset($_SESSION['user_id'])){echo getFname($_SESSION['user_id']);}?>!</p></li>
                 <li id="signin"><p class="text-left" id="signIn"><a href="#" class="btn btn-primary btn-lg navbtn" role="button" data-toggle="modal" data-target="#login-modal">Sign In</a></p></li>
                 <li><p class="text-left" id="adminPanel" hidden><a href="adminPanel.php" class="btn btn-primary btn-lg navbtn" role="button">Admin Panel</a></p></li>
+                <li><p class="text-left" id="profPanel" hidden><a href="profPanel.php" class="btn btn-primary btn-lg navbtn" role="button">Professor Panel</a></p></li>
                 <li id="logout" ><p class="text-left" id="logOut" hidden><button name="btn-logout" class="btn btn-primary btn-lg navbtn" onclick="location.reload(true);" id="destroy">Sign out</button></p></li>
                 <li id="signup"><p class="text-left" id="signUp"><a href="signup.php" class="btn btn-primary btn-lg" role="button">Sign Up</a></p></li>
             </ul>

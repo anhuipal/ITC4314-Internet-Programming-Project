@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="6f3538cc-3393-416f-a86e-31ba560a354d" name="Deree" url="http://students.acg.edu">
-        <fileTransfer host="students.acg.edu" port="21" rootFolder="/public_html/ProjectTest" username="panaretos">
+        <fileTransfer host="students.acg.edu" port="21" rootFolder="/public_html" username="panaretos">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

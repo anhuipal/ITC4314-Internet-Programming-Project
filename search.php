@@ -52,7 +52,7 @@ include "header.php";
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" hidden>
     <div class="jumbotron" align="center"><h2 align="center">Reviews:</h2></div>
-    <?php echo getReviews($_SESSION['course_code']);?>
+    <?php echo getReviews($_SESSION['course_code']); ?>
 </div>
 
 <div class="jumbotron" id="searchAgain" hidden>

@@ -6913,6 +6913,15 @@ button.close {
   border-radius: 6px;
 }
 
+#course_desc{
+  height: 200px;
+  width: 300px;
+  padding: 10px 16px;
+  font-size: 22px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+}
+
 #result-table{
   align:center;
   text-align: center;
@@ -6927,5 +6936,32 @@ button.close {
   padding: 10px;
 }
 
+#result-table2{
+  align:center;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
+}
+
+#result-table2 th{
+  align:center;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
+}
+
+#result-table3{
+  align:center;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
+}
+
+#result-table3 th{
+  align:center;
+  text-align: center;
+  vertical-align: center;
+  padding: 10px;
+}
 
 

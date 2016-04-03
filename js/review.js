@@ -26,8 +26,9 @@ $('document').ready(function()
             data : data,
             beforeSend: function()
             {
-                $("#error").show();
+
                 $("#error").fadeOut();
+                $("#error").html('');
                 $("#review-submit").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; Posting Review ...');
             },
             success :  function(data)
@@ -38,7 +39,7 @@ $('document').ready(function()
 
 
                         $("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; Sorry review not submitted, you have already reviewed this course !</div>');
-
+                        $("#error").show();
                         $("#review-submit").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Send Review');
 
                     });

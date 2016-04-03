@@ -1,5 +1,5 @@
 <?php
-
+$pagetitle="Planner";
 include "header.php";
 
 ?>

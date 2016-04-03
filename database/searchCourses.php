@@ -1,5 +1,5 @@
 <?php
-unset($_SESSION['course_code']);
+
 session_start();
 include_once "db.php";
 include_once "dbFunctions.php";
